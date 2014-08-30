@@ -5,6 +5,7 @@
   <project name="playfulgod/android_device_lge_z-common" path="device/lge/z-common" remote="github" />
   <project name="playfulgod/android_device_lge_d959" path="device/lge/d959" remote="github" />
   <project name="playfulgod/android_kernel_lge_kk_zee" path="kernel/lge/kk_zee" remote="github" branch="cm-bringup" />
+  <project name="playfulgod/android_device_lge_w5" path="device/lge/w5" remote="github" />
   <project name="TheMuppets/proprietary_vendor_oppo" path="vendor/oppo" remote="github" />
   <project name="TheMuppets/proprietary_vendor_sony" path="vendor/sony" remote="github" />
   <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github" />
