@@ -1,0 +1,12 @@
+{
+	devices: [
+		{
+			"code": "manta",
+			"name": "Nexus 10",
+			"mfg": "Samsung",
+			"cwm": true,
+			"cwmkoushtouch": true,
+			"sr": true,
+			"twrp": false
+	]
+}
