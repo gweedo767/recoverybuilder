@@ -10,6 +10,5 @@ Modify additionaldetails.json to add additional details about devices (not used 
 
 TODO: 
 -----
-+ Get rid of the local PHP scripts (requestbuild.php and parsedevices.php)
 + Make it prettier
 + Add TWRP support
