@@ -162,7 +162,7 @@
 	}
 	
 	function loadDeviceList() {
-		$.getJSON( "/parsedevices.php", function( data ) {
+		$.getJSON( "https://s3.amazonaws.com/recoverybuilderwebsite/cm11devices.json", function( data ) {
 			console.log("Devices loaded!");
 			var devices = [];
 			$.each( data, function( key, val ) {
