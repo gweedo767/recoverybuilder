@@ -21,9 +21,15 @@ function loadCurrentDevices() {
 		});
 		$("#currentdevices").html("");
 		$( "<table/>", {
+            "id": "fullDeviceList",
 			"class": "my-new-list",
 			html: devices.join( "" )
 		}).appendTo( "#currentdevices" );
+
+        var theTable = $('table#fullDeviceList')
+        $("#filter").keyup(function() {
+            $.uiTableFilter( theTable, this.value );
+        });
 	});
 }
 
