@@ -184,11 +184,17 @@
 		var recoverytype = $("input:radio[name=recoverytype]:checked").val();
 		var bootimage = $("#bootimage:checked").val();
 		var koushtouch = $("#koushtouch:checked").val();
-		console.log("calling: " + "/build/" + device + "?email=" + email + "&recoverytype=" + recoverytype + "&bootimage=" + bootimage + "&koushtouch=" + koushtouch);
-		$.get("/build/" + device + "?email=" + email + "&recoverytype=" + recoverytype + "&bootimage" + bootimage + "&koushtouch=" + koushtouch, function() {
-			alert("Build request for " + device + " issued.  You will be emailed on completion.");	
-		});		
+		console.log("starting build for " + device + "?email=" + email + "&recoverytype=" + recoverytype + "&bootimage=" + bootimage + "&koushtouch=" + koushtouch);
+		alert("Build request for " + device + " issued.  You will be emailed on completion.");
+		if(recoverytype == "cwmr") {
+			$.get("http://209.114.126.242:8080/job/ClockworkMod%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email + "&BOOTIMAGE=" + bootimage + "&KOUSHTOUCH=" + koushtouch);
+		} else if($recoverytype == "cm") {
+			$.get("http://209.114.126.242:8080/job/Cyanogen%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email);
+		} else if($recoverytype == "twrp") {
+			$.get("http://209.114.126.242:8080/job/TWRP%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email);
+		}
 	}
+
 	
 	function issueCustomRequest() {
 		var customdevice = $("#customdevice").val();
