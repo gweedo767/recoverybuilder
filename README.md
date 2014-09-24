@@ -1,7 +1,7 @@
 recoverybuilder
 ===============
 
-Public files related to the recovery builder at http://unstableapps.com/builder/
+Public files related to the recovery builder at http://builder.unstableapps.com/
 
 Modify roomservice.xml to add support for non-cm device repo's.
 
