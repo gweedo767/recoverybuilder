@@ -36,4 +36,8 @@ angular.module('recoverybuilderApp')
 			$.get("http://209.114.126.242:8080/job/TWRP%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email);
 		}
 	};
+
+	$scope.issueCustomRequest = function(device) {
+		$scope.issueBuildRequest($scope.customdevice);
+	}
   });

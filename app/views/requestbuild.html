@@ -12,7 +12,7 @@
 	<meta name="google-signin-callback" content="signinCallback" />
 </div>
 
-<div id="signedin" style="display: none;">
+<div id="signedin" style="display: block;">
 	<p>You are currently signed in as <span id="currentemail"></span>.  This address will be emailed on build completion.</p>
 	
 	<p>
@@ -36,8 +36,8 @@
 	<div id="customdeviceentry">
 		Is your device so fancy and new it isn't getting cm builds
 		yet? No problem, just specify the device name here:<br />
-		<input type="text" id="customdevice" />
-		<input type="button" value="Request Build" onclick="issueCustomRequest();" />
+		<input type="text" ng-model="customdevice" />
+		<input type="button" value="Request Build" ng-click="issueCustomRequest()" />
 	</div>
 </div>
 
@@ -86,27 +86,4 @@
 			console.log('Sign-in state: ' + authResult['error']);
 		}
 	}
-	
-	function issueRequest(device) {
-		var recoverytype = $("input:radio[name=recoverytype]:checked").val();
-		var bootimage = $("#bootimage:checked").val();
-		var koushtouch = $("#koushtouch:checked").val();
-		console.log("starting build for " + device + "?email=" + email + "&recoverytype=" + recoverytype + "&bootimage=" + bootimage + "&koushtouch=" + koushtouch);
-		alert("Build request for " + device + " issued.  You will be emailed on completion.");
-		if(recoverytype == "cwmr") {
-			$.get("http://209.114.126.242:8080/job/ClockworkMod%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email + "&BOOTIMAGE=" + bootimage + "&KOUSHTOUCH=" + koushtouch);
-		} else if($recoverytype == "cm") {
-			$.get("http://209.114.126.242:8080/job/Cyanogen%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email);
-		} else if($recoverytype == "twrp") {
-			$.get("http://209.114.126.242:8080/job/TWRP%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email);
-		}
-	}
-
-	
-	function issueCustomRequest() {
-		var customdevice = $("#customdevice").val();
-		console.log("issuing build for: " + customdevice);
-		if(customdevice != "") issueRequest(customdevice);
-	}
-     
     </script>
