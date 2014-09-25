@@ -8,9 +8,10 @@
  * Controller of the recoverybuilderApp
  */
 angular.module('recoverybuilderApp')
-  .controller('MainCtrl', function ($scope, $http, deviceService) {
+  .controller('MainCtrl', function ($scope, $http, $rootScope, deviceService) {
     //load current items database
     deviceService.async().then(function(data) {
     	$scope.devices = data;
+    	$scope.totalDevices = data.length;
     });
   });
