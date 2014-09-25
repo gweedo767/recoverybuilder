@@ -1,79 +1,71 @@
-/* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-image:url('http://i.imgur.com/H8lLGMH.png');
+  background-repeat:repeaty;
+  font-family: 'Roboto', sans-serif;
+  color: white;
 }
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+a {
+  color: white;
+  font-size: 10pt;
 }
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
+#donateinfo {
+  margin-top: 50px;
+  font-size: 10pt;
 }
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
+#header {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  min-width: 1000px;
 }
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+#container {
+  margin: 0 auto;
+  display: flex;
+  flex: 1;
 }
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+#maincontent {
+  flex: 1;
+  min-width: 700px;
 }
-.marketing p + h4 {
-  margin-top: 28px;
+#leftbar, #rightbar {
+  flex: 0 0 150px;
 }
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.my-new-list {
+  min-width: 500px;
+  margin: 0 auto;
+}
+table {
+  border-collapse: collapse;
+}
+tr:nth-child(even) {
+   background-color: #444;
+}
+td, th {
+  border: 1px solid gray;
+  text-align: center;
+  background-color: rgba(255,255,255,0.15);
+}
+th {
+  padding: 4px 8px 4px 8px;
+  font-size: 0.9em;
+}
+.devicelink {
+  padding: 4px;
+  line-height: 1.2em;
+  display: block;
+  text-decoration: none;
+  color: #EEF;
+  font-size: 0.9em;
+}
+.devicelink:hover {
+  background-color: gray;
+}
+.devicename {
+  line-height: 1.2em;
+  padding: 4px;
+  text-align: left;
+  font-size: 0.9em;
+}
+#tlcornercell {
+  border-top: 0;
+  border-left: 0;
+  background-color: transparent;
 }

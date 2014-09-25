@@ -27,6 +27,14 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/latest/:recoveryType/:deviceName', {
+        templateUrl: 'views/all.html',
+        controller: 'LatestCtrl'
+      })
+      .when('/all/:deviceName', {
+        templateUrl: 'views/all.html',
+        controller: 'AllCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

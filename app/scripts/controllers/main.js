@@ -8,10 +8,9 @@
  * Controller of the recoverybuilderApp
  */
 angular.module('recoverybuilderApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, $http, deviceService) {
+    //load current items database
+    deviceService.async().then(function(data) {
+    	$scope.devices = data;
+    });
   });
