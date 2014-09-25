@@ -35,6 +35,10 @@ angular
         templateUrl: 'views/all.html',
         controller: 'AllCtrl'
       })
+      .when('/requestbuild', {
+        templateUrl: 'views/requestbuild.html',
+        controller: 'RequestbuildCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

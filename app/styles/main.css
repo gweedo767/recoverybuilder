@@ -69,3 +69,10 @@ th {
   border-left: 0;
   background-color: transparent;
 }
+
+ul {
+  -webkit-column-count: 4; -webkit-column-gap:20px; 
+  -moz-column-count:4; -moz-column-gap:20px; 
+  -o-column-count:4; -o-column-gap:20px;
+  column-count:4; column-gap:20px;
+}
