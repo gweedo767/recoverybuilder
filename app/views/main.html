@@ -1,7 +1,7 @@
 <div style="margin: 0 auto; width: 100%; text-align: center;">
-  <div>Table filter: <input ng-model="$root.deviceFilter" value="" maxlength="30" size="30" type="text"></div>
+  <div>Table filter: <input ng-model="$root.deviceFilter" value="" maxlength="30" size="30" type="search"></div>
   <div ng-show="$root.deviceFilter">
-    Currently showing {{devicesFiltered.length}} devices of {{totalDevices}} based on filter. <a ng-click="$root.deviceFilter = ''">(clear filter)</a>
+    Currently showing {{devicesFiltered.length}} devices of {{totalDevices}} based on filter.
   </div>
 </div>
 
