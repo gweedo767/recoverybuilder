@@ -29,11 +29,11 @@ angular.module('recoverybuilderApp')
 		$log.log("starting build for " + device + "?email=" + email + "&recoverytype=" + recoverytype + "&bootimage=" + bootimage + "&koushtouch=" + koushtouch);
 		alert("Build request for " + device + " issued.  You will be emailed on completion.");
 		if(recoverytype == "cwmr") {
-			$.get("http://209.114.126.242:8080/job/ClockworkMod%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email + "&BOOTIMAGE=" + bootimage + "&KOUSHTOUCH=" + koushtouch);
+			$.get("http://jenkins.unstableapps.com/job/ClockworkMod%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email + "&BOOTIMAGE=" + bootimage + "&KOUSHTOUCH=" + koushtouch);
 		} else if(recoverytype == "cm") {
-			$.get("http://209.114.126.242:8080/job/Cyanogen%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email);
+			$.get("http://jenkins.unstableapps.com/job/Cyanogen%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email);
 		} else if(recoverytype == "twrp") {
-			$.get("http://209.114.126.242:8080/job/TWRP%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email);
+			$.get("http://jenkins.unstableapps.com/job/TWRP%20Recovery%20Build/buildWithParameters?token=buildrecovery&DEVICENAME=" + device + "&EMAIL=" + email);
 		}
 	};
 
