@@ -1,0 +1,14 @@
+<p><a href="#">View all devices</a></p>
+
+<div>
+	Requested recoveries for {{deviceName}}.
+</div>
+
+<table class="my-new-list">
+  <tr ng-repeat="file in recoveryFiles">
+    <td style="text-align: left;"><a class="devicelink" href="{{file.link}}">{{file.file}}</a></td><td>{{file.md5}}</td>
+  </tr>
+  <tr ng-hide="recoveryFiles">
+  	<td style="text-align: left;"><a class="devicelink">Requested recovery not found</a></td>
+  </tr>
+</table>

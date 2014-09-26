@@ -1,0 +1,42 @@
+<div id="notsignedin"> <p>To issue a build request you must first sign in with your Google+ account. This is used to notify you via email once your build is finished.</p> <span id="signinButton"> <span class="g-signin" data-callback="signinCallback" data-clientid="73658132174-cmro35hgh0pq8opk0h19d8ln7pmov6q9.apps.googleusercontent.com" data-cookiepolicy="single_host_origin" data-scope="https://www.googleapis.com/auth/plus.profile.emails.read"> </span> </span> <meta name="google-signin-callback" content="signinCallback"> </div> <div id="signedin" style="display: none"> <p>You are currently signed in as <span id="currentemail"></span>. This address will be emailed on build completion.</p> <p> Select what type of recovery you want to build:<br> <input type="radio" ng-model="recoverytype" value="cwmr" checked> ClockworkMod Recovery<br> <input type="radio" ng-model="recoverytype" value="cm"> CyanogenMod Recovery<br> <input type="radio" ng-model="recoverytype" value="twrp"> TWRP Recovery<br> <input type="checkbox" ng-model="bootimage" name="bootimage" ng-true-value="yes"> Build boot image (only use if you know what this does)<br> <input type="checkbox" ng-model="koushtouch" name="koushtouch" ng-true-value="yes"> Enable Koush's Touch Controls (this will disable stock swipe code) </p> <div id="deviceList"> Support devices: <ul class="my-new-list"> <li ng-repeat="device in buildDevices"> <a class="devicelink" ng-click="issueBuildRequest(device)">{{device}}</a> </li> </ul> </div> <div id="customdeviceentry"> Is your device so fancy and new it isn't getting cm builds yet? No problem, just specify the device name here:<br> <input type="text" ng-model="customdevice"> <input type="button" value="Request Build" ng-click="issueCustomRequest()"> </div> </div> <!-- Place this asynchronous JavaScript just before your </body> tag --> <script type="text/javascript">(function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0];
+       s.parentNode.insertBefore(po, s);
+      })();
+       var email = "";
+     	function signinCallback(authResult) {
+		if (authResult['status']['signed_in']) {
+			// Update the app to reflect a signed in user
+			// Hide the sign-in button now that the user is authorized, for example:
+			document.getElementById('signinButton').setAttribute('style', 'display: none');
+			console.log("User is signed in");
+			//console.log(authResult);
+			
+			$("#signedin").fadeIn();
+			$("#notsignedin").fadeOut();
+			
+			gapi.client.load('plus','v1', function(){
+				var request = gapi.client.plus.people.get({
+   					'userId': 'me'
+ 				});
+ 				request.execute(function(resp) {
+   					//console.log(resp);
+   					console.log('Retrieved profile for:' + resp.displayName);
+   					
+   					email = resp.emails[0].value;
+   					
+   					$("#currentemail").html(resp.emails[0].value);
+   					
+   					loadDeviceList();
+ 				});
+			});
+  		} else {
+			// Update the app to reflect a signed out user
+			// Possible error values:
+			//   "user_signed_out" - User is signed-out
+			//   "access_denied" - User denied access to your app
+			//   "immediate_failed" - Could not automatically log in the user
+			console.log('Sign-in state: ' + authResult['error']);
+		}
+	}</script>
