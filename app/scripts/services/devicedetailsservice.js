@@ -16,7 +16,7 @@ angular.module('recoverybuilderApp')
     	async: function() {
     		if( !promise ) {
     			$log.log('device details not cached');
-    			promise = $http.get('http://gweedo767.github.io/recoverybuilder/additionaldetails.json').then(function(response) {
+    			promise = $http.get('https://s3.amazonaws.com/recoverybuilderwebsite/additionaldetails.json').then(function(response) {
     				return response.data;
     			});
     		} else {

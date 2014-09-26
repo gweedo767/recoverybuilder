@@ -5,11 +5,11 @@
   </div>
 </div>
 
-
-
 <table class="my-new-list">
   <tr ng-repeat="device in devicesFiltered = (devices | filter: $root.deviceFilter)">
-    <td style="text-align: left;"><a class="devicelink" href="http://download.cyanogenmod.org/?device={{device}}">{{device}}</a></td>
+    <td style="text-align: left;"><a class="devicelink" href="http://download.cyanogenmod.org/?device={{device}}">
+      <span ng-show="deviceDetails.devices[device].realName">{{deviceDetails.devices[device].realName}} - </span>{{device}}
+    </a></td>
     <td><a class="devicelink" href="#/latest/clockworkmodrecovery/{{device}}">cwmr</a></td>
     <td><a class="devicelink" href="#/latest/cyanogenrecovery/{{device}}/">cm recovery</a></td>
     <td><a class="devicelink" href="#/all/{{device}}/">see all</a></td>
