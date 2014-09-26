@@ -15,6 +15,30 @@
 			"thumbnail": "",
 			"image": "",
 			"recoveryFlashCommand": "dd if=%s of=/dev/block/platform/msm_sdcc.1/by-name/recovery"
+		},
+		"d2att": {
+			"realName": "Galaxy S3 AT&T"
+		},
+		"d2cri": {
+			"realName": "Galaxy S3 Cricket"
+		},
+		"d2lte": {
+			"realName": "Galaxy S3 LTE"
+		},
+		"d2mtr": {
+			"realName": "Galaxy S3 Metro PCS"
+		},
+		"d2spr": {
+			"realName": "Galaxy S3 Sprint"
+		},
+		"d2tmo": {
+			"realName": "Galaxy S3 T-Mobile"
+		},
+		"d2usc": {
+			"realName": "Galaxy S3 US Cellular"
+		},
+		"d2vzw": {
+			"realName": "Galaxy S3 Verizon"
 		}
 	}
 }
