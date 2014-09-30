@@ -8,19 +8,19 @@
  * Controller of the recoverybuilderApp
  */
 angular.module('recoverybuilderApp')
-  .controller('AllCtrl', function ($scope, $routeParams, devicefileservice) {
+  .controller('AllCtrl', function ($scope, $routeParams, $log, devicefileservice) {
     //load current items database
     $scope.deviceName = $routeParams.deviceName;
 
     devicefileservice.async().then(function(data) {
     	var fileList = [];
-    	$.each( data, function( key, val ) {
-            if( key == $scope.deviceName) {
-                $.each( val["clockworkmodrecovery"].files, function( allkey, allval ) {
-                        fileList.push( allval );
+    	angular.forEach( data, function( key, val ) {
+            if( val == $scope.deviceName) {
+                angular.forEach( key["clockworkmodrecovery"].files, function( allkey, allval ) {
+                    fileList.push( allkey );
                 });
-                $.each( val["cyanogenrecovery"].files, function( allkey, allval ) {
-                        fileList.push( allval );
+                angular.forEach( key["cyanogenrecovery"].files, function( allkey, allval ) {
+                    fileList.push( allkey );
                 });
             }
 	    });
